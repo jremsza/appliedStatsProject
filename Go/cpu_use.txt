@@ -1,0 +1,19 @@
+At the terminal, the following command was exectuted:
+go tool pprof --text profile.prof
+
+
+
+Type: cpu
+Time: Feb 21, 2024 at 3:00pm (CST)
+Duration: 219.49ms, Total samples = 20ms ( 9.11%)
+Entering interactive mode (type "help" for commands, "o" for options)
+(pprof) top
+Showing nodes accounting for 20ms, 100% of 20ms total
+Showing top 10 nodes out of 13
+      flat  flat%   sum%        cum   cum%
+         0     0%   100%       20ms   100%  main.Bootstrap
+         0     0%   100%       20ms   100%  main.main
+         0     0%   100%       10ms 50.00%  main.statFunc
+         0     0%   100%       10ms 50.00%  math/rand.(*Rand).Intn
+         0     0%   100%       10ms 50.00%  math/rand.Intn
+         0     0%   100%       20ms   100%  runtime.main
