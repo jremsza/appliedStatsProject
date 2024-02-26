@@ -23,6 +23,7 @@ PASS
 ok  	goStats/appliedStats	2.335s
 
 Memory usage: 18.71 MB and 2.335 secs per iteration. However, when the executable is run using the bash command:
+
 $ start=$(date +%s%N)
 ./appliedStats.exe
 
