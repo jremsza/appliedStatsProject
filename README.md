@@ -34,6 +34,7 @@ This results show that the Go program is comparable in speed to the R program.
 Logging was conducted specifically for reading in the data and conducting the bootstrap operation in the main function. Here is what the output yields.
 
 2024/02/24 19:03:12 Data read successfully
+
 2024/02/24 19:03:12 Bootstrap process completed
 
 Profile.prof program was run using the go tool pprof --text profile.prof command, and the output is stored in the text file called cpu_use.txt. From the output, `flat` values are 0, which means that no single function used a significant amount of CPU time directly. However, the `cum` values show that the `main.Bootstrap`, `main.main`, and `runtime.main` functions used 100% of the CPU time, and `main.statFunc`, `math/rand.(*Rand).Intn`, and `math/rand.Intn` used 50% of the CPU time. This suggests that the`main.Bootstrap` function is the main driver of CPU usage in this program, and within that function, `main.statFunc` and the random number generation functions (`math/rand.(*Rand).Intn` and `math/rand.Intn`) are significant contributors.
